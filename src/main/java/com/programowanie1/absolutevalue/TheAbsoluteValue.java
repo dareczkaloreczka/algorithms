@@ -1,3 +1,5 @@
+package com.programowanie1.absolutevalue;
+
 import java.util.Scanner;
 
 public class TheAbsoluteValue {
