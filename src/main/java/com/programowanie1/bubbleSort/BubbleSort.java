@@ -22,12 +22,7 @@ public class BubbleSort {
 
     public static void main(String[] args) {
 
-        int[] numeros = {6, 5, 2, 8, 7};
-        bubbleSort(numeros);
-        for (int n : numeros) {
-            System.out.println(n);
-        }
-  /*      Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Podaj liczbe elementów tablicy");
         int lenght = scanner.nextInt();
         int[] numbers = new int[lenght];
@@ -35,9 +30,9 @@ public class BubbleSort {
             System.out.println("Podaj kolejny element:");
             numbers[i] = scanner.nextInt();
         }
-        int[] sortedNumbers = bubbleSort(numbers);
-        for (int number : sortedNumbers) {
+        bubbleSort(numbers);
+        for (int number : numbers) {
             System.out.println(number);
-        }*/
+        }
     }
 }
