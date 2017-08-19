@@ -2,7 +2,7 @@ package com.programowanie1.idCreator;
 
 public class IdCreator {
 
-    public static void createID (String iD) {
+    public static boolean createID (String iD) {
         int sum = 0;
         int[] values = new int[iD.length()];
         char[] alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray();
@@ -47,18 +47,44 @@ public class IdCreator {
             }
 
         }
-        System.out.println(sum);
         if(sum%10 == Integer.parseInt(String.valueOf(iD.charAt(3)))){
-            System.out.println("o ja jebie udało sie");
+           return true;
         }
         else{
-            System.out.println("breaaak timeee");
+            return false;
         }
 
     }
+    public static boolean validateId (String iD){
+
+        if (iD.length() != 9) {
+            return false;
+        }
+        for (int i = 0; i <3 ; i++) {
+            int temp = iD.charAt(i);
+            if (temp < 65 && temp > 90){
+                return false;
+            }
+        }
+        for (int i = 3; i <9 ; i++) {
+            int temp = iD.charAt(i) - 48;
+            if (temp < 0 && temp > 9){
+                return false;
+            }
+        }
+        return true;
+
+        }
+
+
 
     public static void main(String[] args) {
 
-        createID("ABS123456");
+        String iD = "ABS123456";
+
+        if (validateId(iD)) {
+            System.out.println(createID(iD));
+        }
+        else System.out.println("Niepoprawny number dowodu");
     }
 }
